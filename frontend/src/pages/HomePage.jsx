@@ -1,6 +1,9 @@
 import NavBar from "../components/NavBar.jsx";
 import Footer from "../components/Footer.jsx";
 
+//import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
+
 
 const HomePage = () => {
     return (

@@ -5,13 +5,12 @@ import HomePage from "./pages/HomePage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 
 function App() {
-
   return (
-    <Routes>
+        <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/contact' element={<ContactPage />} />
-    </Routes>
+        </Routes>
   )
 }
 
-export default App
+export default App;
