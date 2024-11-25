@@ -4,7 +4,7 @@ const NavBar = () => {
             <header>
                 <div className="navbar bg-base-100">
                     <div className="navbar-start">
-                        <a className="btn btn-ghost text-xl">Judo Coronado</a>
+                        <a className="btn btn-ghost text-xl" href="/">Judo Coronado</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
@@ -17,7 +17,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <a className="btn btn-outline btn-primary">Login</a>
+                        <a className="btn btn-outline btn-primary" href="/login">Login</a>
                     </div>
                 </div>
             </header>

@@ -21,8 +21,10 @@ const HomePage = () => {
                            <p className="mb-5">
                                Entrena con los mejores de Costa Rica
                            </p>
-                           <button className="btn btn-primary">Contáctanos</button>
-                       </div>
+                           <a href="/contact">
+                               <button className="btn btn-primary">Contáctanos</button>
+                           </a>
+                   </div>
                    </div>
                 </div>
             </section>
