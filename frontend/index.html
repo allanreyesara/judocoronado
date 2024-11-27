@@ -13,7 +13,7 @@
         const isBrowser = () => typeof window !== "undefined";
         const isGlobal = () => typeof global !== "undefined";
         if (!isGlobal() && isBrowser()) {
-          const global = window;
+          var global = window;
         }
     </script>
   </body>
