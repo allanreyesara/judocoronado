@@ -47,6 +47,33 @@ const ContactPage = () => {
                                 <h2 className="mt-4">C/ 153, San Isidro, Vázquez de Coronado, Costa Rica</h2>
                             </div>
                         </div>
+                        <div>
+                            <h1 className='text-4xl font-extrabold dark:text-white tracking-wide'>Horarios</h1>
+                            <div className="divider divider-accent">Judo Coronado</div>
+                            <div>
+                                <div className='w-full'>
+                                    <h2 className='font-bold  mt-4'>Martes: 5:00pm-7:00pm Principiantes | 7:00pm-9:00pm
+                                        Avanzados</h2>
+                                </div>
+                                <div className='w-full'>
+                                    <h2 className='font-bold  mt-4 text-start'>Miércoles: 5:00pm-7:00pm Grupo
+                                        Completo</h2>
+                                </div>
+                                <div className='w-full'>
+                                    <h2 className='font-bold  mt-4'>Jueves: 5:00pm-7:00pm Principiantes | 7:00pm-9:00pm
+                                        Avanzados</h2>
+                                </div>
+                                <div className="divider divider-accent">Judo Yorusti</div>
+                                <h2 className='text-start italic'>Entrenamientos para niños y niñas menores de 10
+                                    años </h2>
+                                <div className='w-full'>
+                                    <h2 className='font-bold  mt-4 text-start'>Miércoles: 5:00pm-6:00pm</h2>
+                                </div>
+                                <div className='w-full'>
+                                    <h2 className='font-bold  mt-4 text-start'>Jueves: 5:00pm-6:00pm</h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

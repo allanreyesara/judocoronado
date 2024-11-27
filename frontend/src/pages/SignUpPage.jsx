@@ -20,8 +20,8 @@ const SignUp = () => {
             </section>
             <section className="min-h-screen min-w-screen bg-cover rounded-3xl"
                      style={{backgroundImage: "url(https://i.ibb.co/zJvjhSK/igles.jpg)",}}>
-                <div className="h-screen flex items-center justify-center">
-                    <div className="card glass w-96">
+                <div className='container content-center mx-auto'>
+                    <div className="card glass max-w-96 flex m-auto mt-52">
                         <h1 className="text-6xl text-black">Sign Up</h1>
                         <div className="card-body">
                             <label className="input input-bordered flex items-center gap-2">
@@ -91,10 +91,10 @@ const SignUp = () => {
                                 </label>
                                 <div className="divider">O</div>
                                 <div className="flex items-center justify-center ">
-                                    <GoogleOAuthProvider clientId= {clientID}>
-                                    <label className="glass">
-                                        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-                                    </label>
+                                    <GoogleOAuthProvider clientId={clientID}>
+                                        <label className="glass">
+                                            <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
+                                        </label>
                                     </GoogleOAuthProvider>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ const SignUp = () => {
                 </div>
             </section>
             <section>
-                <Footer />
+            <Footer />
             </section>
         </div>
     );

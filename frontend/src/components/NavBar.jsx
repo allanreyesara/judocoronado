@@ -9,10 +9,7 @@ const NavBar = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <li><a href="/">Inicio</a></li>
-                            <li><a>Nosotros</a></li>
-                            <li><a>Clases & Horarios</a></li>
-                            <li><a>Instructores</a></li>
-                            <li><a>Los Lecheros</a></li>
+                            <li><a href='/lecheros'>Los Lecheros</a></li>
                             <li><a href="/contact">Contáctanos</a></li>
                         </ul>
                     </div>
@@ -24,4 +21,5 @@ const NavBar = () => {
             );
         }
 
-        export default NavBar;
+
+export default NavBar;

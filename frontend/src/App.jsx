@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignUp from "./pages/SignUpPage.jsx";
+import Lecheros from "./pages/LosLecheros.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/lecheros' element={<Lecheros />} />
         </Routes>
   )
 }

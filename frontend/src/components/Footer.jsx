@@ -2,11 +2,8 @@ const Footer = () => {
     return (
         <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
             <nav className="grid grid-flow-col gap-4">
-                <a className="link link-hover">Nosotros</a>
                 <a className="link link-hover" href="/contact">Contáctanos</a>
                 <a className="link link-hover">Los Lecheros</a>
-                <a className="link link-hover">Clases & Horarios</a>
-
             </nav>
             <nav>
                 <div className="grid grid-flow-col gap-4">
@@ -35,7 +32,7 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by JUDO CORONADO	</p>
+                <p>Copyright © {new Date().getFullYear()} - Pagina creada por Allan Araya Reyes	</p>
             </aside>
         </footer>
     );
