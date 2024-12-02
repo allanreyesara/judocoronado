@@ -7,8 +7,8 @@ const Lecheros = () => {
             <section>
                 <NavBar />
             </section>
-            <section>
-                <div className='bg-gray-900'>
+            <section className="content">
+                <div className='bg-gray-900 rounded-3xl'>
                     <div className='mt-6'>
                         <h1 className='mb-4 text-4xl font-extrabold md:text-5xl lg:text-6xl'>Los Lecheros</h1>
                     </div>
@@ -60,7 +60,7 @@ const Lecheros = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-6'>
+                    <div className='mt-6 mb-10'>
                         <div className='container flex m-auto w-1/2 items-center'>
                             <p className='w-1/2 text-justify'>Los Lecheros, que ha sido declarado por la Federación
                                 Costarricense de Judo como el mejor del país, es fruto del esfuerzo de la Junta
@@ -78,17 +78,17 @@ const Lecheros = () => {
                                 como un lugar en el que se practican deportes no tradicionales.</p>
                         </div>
                     </div>
-                    <div className='mt-6'>
+                    <div className='mt-6 mb-3'>
                         <div className='container flex m-auto w-1/2 items-center'>
                             <p className='w-1/2 text-justify'>Desde el 2012 y hasta la pandemia, el aforo de atletas
                                 fue, en promedio, de 600 judokas, de 35 clubes por torneo, en Los Lecheros IX, evento post
                                 pandemia, el aforo fue de 450 atletas de 28 clubes.</p>
-                            <img className='w-1/2 ml-3 rounded-3xl h-96' src='https://i.ibb.co/QcLvVMg/brandon-Yeithan.jpg'/>
+                            <img className='w-1/2 ml-3 rounded-3xl h-96 mb-6' src='https://i.ibb.co/QcLvVMg/brandon-Yeithan.jpg'/>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
+            <section className='footer mt-6'>
                 <Footer/>
             </section>
         </div>
