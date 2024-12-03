@@ -38,7 +38,7 @@ const NavBar = () => {
                             <li><a href="/contact">Cont&#225;ctanos</a></li>
                         </ul>
                     </div>
-                    <div className="navbar-end">
+                    <div className="navbar-end hidden">
                         <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">Ingresar</a>
                     </div>
                 </div>
