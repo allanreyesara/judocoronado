@@ -1,10 +1,11 @@
 import NavBar from "../components/NavBar.jsx";
 import Footer from "../components/Footer.jsx";
 
-import {APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+import {APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
 
 const ContactPage = () => {
     const GOOGLE = import.meta.env.VITE_GOOGLE_API;
+    const mapId = import.meta.env.VITE_MAP_ID;
 
     return(
         <div>
@@ -22,9 +23,15 @@ const ContactPage = () => {
                             <div className="map-container md:h-96 md:mb-3 h-64">
                                 <APIProvider apiKey={GOOGLE}>
                                     <Map
+                                        mapId={mapId}
                                         defaultZoom={19}
                                         defaultCenter={{lat: 9.971296425943725, lng: -84.00893886012153}}>
-                                    <Marker position={{lat: 9.971296425943725, lng: -84.00893886012153}} />
+
+                                        <AdvancedMarker
+                                                  key = "judoCoronado"
+                                                  position={{lat: 9.971296425943725, lng: -84.00893886012153}}>
+                                                <Pin background={'red'} glyphColor={'black'} borderColor={'#000'} />
+                                                </AdvancedMarker>
                                     </Map>
                                 </APIProvider>
                             </div>
@@ -33,13 +40,13 @@ const ContactPage = () => {
                             <div className="w-full space-y-10">
                                 <h1 className="text-4xl font-extrabold dark:text-white tracking-wide">Teléfono</h1>
                                 <a href="https://wa.me/50688346235" target="_blank">
-                                    <h2 className="hover:cursor-pointer mt-4">+506 8834-6235</h2>
+                                    <h2 className="hover:cursor-pointer mt-4 underline ">+506 8834-6235</h2>
                                 </a>
                             </div>
                             <div className="w-full">
-                                <h1 className="text-4xl font-extrabold dark:text-white tracking-wide">Correo</h1>
+                                <h1 className="text-4xl font-extrabold dark:text-white tracking-wide ">Correo</h1>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rodolfodura@gmail.com" target="_blank">
-                                    <h2 className="hover:cursor-pointer mt-4"> rodolfodura@gmail.com </h2>
+                                    <h2 className="hover:cursor-pointer mt-4 underline"> rodolfodura@gmail.com </h2>
                                 </a>
                             </div>
                             <div className="w-full">
@@ -52,30 +59,32 @@ const ContactPage = () => {
                             <div className="divider divider-accent">Judo Coronado</div>
                             <div>
                                 <table className="table">
-                                    <tr>
-                                        <th rowSpan="2">Martes</th>
-                                        <td>Principiantes</td>
-                                        <td>5:00pm-7:00pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Avanzados</td>
-                                        <td>7:00pm-9:00pm</td>
-                                    </tr>
-                                    <tr className="border-t border-b border-accent">
-                                        <th>Mi&eacute;rcoles</th>
-                                        <td>Grupo completo</td>
-                                        <td>5:00pm-7:00pm</td>
+                                    <tbody>
+                                        <tr>
+                                            <th rowSpan="2">Martes</th>
+                                            <td>Principiantes</td>
+                                            <td>5:00pm-7:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Avanzados</td>
+                                            <td>7:00pm-9:00pm</td>
+                                        </tr>
+                                        <tr className="border-t border-b border-accent">
+                                            <th>Mi&eacute;rcoles</th>
+                                            <td>Grupo completo</td>
+                                            <td>5:00pm-7:00pm</td>
 
-                                    </tr>
-                                    <tr>
-                                        <th rowSpan="2">Jueves</th>
-                                        <td>Principiantes</td>
-                                        <td>5:00pm-7:00pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Avanzados</td>
-                                        <td>7:00pm-9:00pm</td>
-                                    </tr>
+                                        </tr>
+                                        <tr>
+                                            <th rowSpan="2">Jueves</th>
+                                            <td>Principiantes</td>
+                                            <td>5:00pm-7:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Avanzados</td>
+                                            <td>7:00pm-9:00pm</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
 
                                 <div className="divider divider-accent">Judo Yorusti</div>
