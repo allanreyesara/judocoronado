@@ -7,8 +7,8 @@ const Lecheros = () => {
             <section>
                 <NavBar />
             </section>
-            <section className="content bg-gray-900 flex">
-                <div className=' rounded-3xl w-full'>
+            <section className="content bg-gray-900 rounded-3xl flex">
+                <div className='w-full mt-10'>
                     <div className='descripcion'>
                         <div className=''>
                             <h1 className='mb-5 font-extrabold text-center  text-5xl md:text-5xl lg:text-6xl'>Los
