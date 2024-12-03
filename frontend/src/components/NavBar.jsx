@@ -38,8 +38,8 @@ const NavBar = () => {
                             <li><a href="/contact">Cont&#225;ctanos</a></li>
                         </ul>
                     </div>
-                    <div className="navbar-end hidden">
-                        <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">Ingresar</a>
+                    <div className="navbar-end ">
+                        <a className="btn btn-outline btn-primary text-sm ml-10 hidden" href="/login">Ingresar</a>
                     </div>
                 </div>
             </header>
