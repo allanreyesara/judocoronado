@@ -60,12 +60,12 @@ const ContactPage = () => {
                             <div>
                                 <table className="table">
                                     <tbody>
-                                        <tr>
+                                        <tr className="">
                                             <th rowSpan="2">Martes</th>
                                             <td>Principiantes</td>
                                             <td>5:00pm-7:00pm</td>
                                         </tr>
-                                        <tr>
+                                        <tr className="border-b border-accent">
                                             <td>Avanzados</td>
                                             <td>7:00pm-9:00pm</td>
                                         </tr>
