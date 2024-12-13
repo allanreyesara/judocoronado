@@ -2,6 +2,8 @@
 
 ## This is a work in progress
 
+## You can see the live version at https://judocoronado.com/
+
 
 ## Setup
 -Clone the code
