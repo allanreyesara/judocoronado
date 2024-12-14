@@ -1,5 +1,28 @@
+import {useQuery} from "@tanstack/react-query";
 
 const NavBar = () => {
+        const { data: authUser, isLoading } = useQuery({
+        queryKey: ["authUser"],
+        queryFn: async () => {
+            try {
+                const res = await fetch("/api/auth/me")
+                const data = await res.json();
+                console.log(data)
+
+
+                if(data.error) return null;
+
+                if(!res.ok) throw new Error(data.error || "Something went wrong")
+
+                console.log("auth user is here: ", data)
+                return data
+            }catch (error){
+                console.log(error.message)
+            }
+        },
+        retry: false,
+    })
+
     return (
             <header>
                 <div className="navbar bg-base-100">
@@ -39,7 +62,9 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end ">
-                        <a className="btn btn-outline btn-primary text-sm ml-10 hidden" href="/login">Ingresar</a>
+                        {!authUser && <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">Ingresar</a>}
+                        {authUser && <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">{authUser.name}</a>}
+
                     </div>
                 </div>
             </header>

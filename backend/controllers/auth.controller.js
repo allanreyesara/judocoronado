@@ -33,7 +33,32 @@ export const signup = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        if (userType === "athlete") {
+
+        const newUser = new User({
+            fullName,
+            username,
+            email,
+            password: hashedPassword
+        })
+
+        if (newUser) {
+            generateTokenAndSetCookie(newUser._id, res)
+            await newUser.save();
+            res.status(201).json({
+                _id: newUser._id,
+                fullName: newUser.fullName,
+                username: newUser.username,
+                email: newUser.email,
+                profileImg: newUser.profileImg,
+                password: newUser.password
+            })
+        }
+        else{
+            console.log(error)
+            res.status(400).json({error: "Invalid user data"})
+        }
+
+        /*if (userType === "athlete") {
             const {age, gender} = req.body;
             const newAthlete = new Athlete({
                 fullName,
@@ -81,11 +106,7 @@ export const signup = async (req, res) => {
                     email: newTrainer.email,
                     profileImg: newTrainer.profileImg,
                     dan: newTrainer.dan
-                })
-            } else {
-                res.status(400).json({error: "Invalid user data"})
-            }
-        }
+                }) */
     }catch (err) {
         res.status(500).json({ error: "Internal server error "})
         console.log( err )
@@ -94,7 +115,7 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        const { username, password} = req.body;
+        const { username, password } = req.body;
         const user = await User.findOne({ username });
         const isPasswordCorrect = await bcrypt.compare(password, user?.password || "")
 
@@ -128,8 +149,10 @@ export const logout = async (req, res) => {
 export const getMe = async (req, res) => {
     try {
         const user = await User.findById(req.user._id).select("-password");
+        console.log(req.user._id)
+
         res.status(200).json(user);
-    } catch (err){
+    } catch (error){
         console.log("Error in getMe controller", error.message);
 		res.status(500).json({ error: "Internal Server Error" });
     }
