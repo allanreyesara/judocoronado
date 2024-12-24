@@ -1,27 +1,10 @@
-import {useQuery} from "@tanstack/react-query";
+import {useState} from "react";
 
 const NavBar = () => {
-        const { data: authUser, isLoading } = useQuery({
-        queryKey: ["authUser"],
-        queryFn: async () => {
-            try {
-                const res = await fetch("/api/auth/me")
-                const data = await res.json();
-                console.log(data)
 
 
-                if(data.error) return null;
+    const [session, setSession] = useState(JSON.parse(localStorage.getItem('user')).session_id);
 
-                if(!res.ok) throw new Error(data.error || "Something went wrong")
-
-                console.log("auth user is here: ", data)
-                return data
-            }catch (error){
-                console.log(error.message)
-            }
-        },
-        retry: false,
-    })
 
     return (
             <header>
@@ -62,8 +45,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end ">
-                        {!authUser && <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">Ingresar</a>}
-                        {authUser && <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">{authUser.name}</a>}
+                        <a className="btn btn-outline btn-primary text-sm ml-10" href="/login">Ingresar</a>
 
                     </div>
                 </div>

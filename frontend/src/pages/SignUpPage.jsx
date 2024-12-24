@@ -27,17 +27,18 @@ const SignUp = () => {
     const { mutate, isError, isPending, error} = useMutation({
         mutationFn: async ({email, username, fullName, password}) => {
             try {
-                const res = await fetch("/api/auth/signup", {
+                const res = await fetch("/api/v1/signup", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ email, username, fullName, password })
+                    body: JSON.stringify({ email, username, 'full_name': fullName, password })
                 })
 
                 const data = await res.json()
 
                 if (!res.ok) throw new Error(data.error || "Something went wrong")
+
                 console.log(data);
                 return data;
             }catch (error){

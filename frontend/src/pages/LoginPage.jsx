@@ -1,17 +1,18 @@
 import NavBar from "../components/NavBar.jsx";
 import Footer from "../components/Footer.jsx";
 import {GoogleLogin, GoogleOAuthProvider} from "@react-oauth/google";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 
 import { MdAccountCircle, MdKey  } from "react-icons/md";
-import {Link} from "react-router-dom";
 import {useNavigate} from 'react-router-dom'
+import {data} from "autoprefixer";
 
 
 const LoginPage = () => {
     const navigate = useNavigate()
+
     const responseMessage = (response) => {
         console.log(response);
     };
@@ -24,12 +25,13 @@ const LoginPage = () => {
         password: ""
     });
 
+
     const queryClient = useQueryClient();
 
     const { mutate: loginMutation, isError, isPending, error } = useMutation({
         mutationFn: async ({ username, password}) => {
             try {
-                const res= await  fetch("/api/auth/login", {
+                const res= await  fetch("/api/v1/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -41,6 +43,7 @@ const LoginPage = () => {
                 if(!res.ok) throw new Error(data.error || "Something went wrong");
                 navigate('/');
                 console.log(data);
+                localStorage.setItem('user', JSON.stringify(data))
 				return data;
 
             } catch (error){

@@ -148,8 +148,9 @@ export const logout = async (req, res) => {
 
 export const getMe = async (req, res) => {
     try {
-
-        const user = await User.findById(req.user._id).select("-password");
+        console.dir(req, { depth: null });
+        console.log(JSON.stringify(req.headers));
+        const user = await User.findById(req.user.userId).select("-password");
         console.log(req.user._id)
 
         res.status(200).json(user);
